@@ -23,6 +23,9 @@ server.listen(process.env.PORT || 8081,function(){
 
 // when connected
 io.on('connection',function(socket){
+
+    console.log('socket.broadcast:', socket.broadcast);
+
     // add new player to world
     socket.on('newplayer',function(){
 
@@ -35,6 +38,7 @@ io.on('connection',function(socket){
         // function return player list in array
         socket.emit('allplayers', getAllPlayers());
 
+        // show new player to all the hosts
         socket.broadcast.emit('newplayer', socket.player);
 
         // when move player position
