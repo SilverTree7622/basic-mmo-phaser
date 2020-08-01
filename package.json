@@ -4,10 +4,9 @@
   "description": " Very basic multiplayer online game example made with Phaser, Node.js and Socket.io ",
   "main": "server.js",
   "scripts": {
-    "server": "node ./server/server.js",
-    "build": "parcel build index.html --open -p 9999",
+    "node": "node ./server/server.js",
     "watch": "parcel watch index.html --open -p 9998",
-    "http": "http-server index/html -p 9997 -c-1"
+    "build": "parcel build index.html --open -p 9999"
   },
   "repository": {
     "type": "git",
@@ -32,6 +31,7 @@
     "socket.io": "^1.7.3"
   },
   "devDependencies": {
+    "http-server": "^0.12.3",
     "parcel": "^1.12.4",
     "phaser3_gui_inspector": "^1.2.0"
   }
