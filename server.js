@@ -17,14 +17,15 @@ app.get('/',function(req,res){
 server.lastPlayderID = 0;
 
 // temp server connection
-server.listen(process.env.PORT || 8081,function(){
-    console.log('Listening on '+server.address().port);
+server.listen(process.env.PORT || 8081, function () {
+    console.log('http://127.0.0.1:'+ server.address().port);
 });
 
 // when connected
 io.on('connection',function(socket){
 
-    console.log('socket.broadcast:', socket.broadcast);
+    console.log('player entered');
+    // console.log('socket.broadcast:', socket.broadcast);
 
     // add new player to world
     socket.on('newplayer',function(){
@@ -34,6 +35,8 @@ io.on('connection',function(socket){
             x: randomInt(100,400),
             y: randomInt(100,400)
         };
+
+        console.log('socket.player:', socket.player);
         
         // function return player list in array
         socket.emit('allplayers', getAllPlayers());
@@ -41,29 +44,39 @@ io.on('connection',function(socket){
         // show new player to all the hosts
         socket.broadcast.emit('newplayer', socket.player);
 
-        // when move player position
-        socket.on('click',function(data){
-            console.log('click to '+data.x+', '+data.y);
+        // when move player position (might be action will fill this stuffs)
+        socket.on('click', function (data) {
+            console.log('click to '+ data.x +', '+ data.y);
             socket.player.x = data.x;
             socket.player.y = data.y;
             io.emit('move', socket.player);
         });
 
         // when player quit do remove work
-        socket.on('disconnect',function(){
+        socket.on('disconnect', function () {
             io.emit('remove', socket.player.id);
         });
     });
-
 });
 
 
 function getAllPlayers(){
     var players = [];
-    Object.keys(io.sockets.connected).forEach(function(socketID){
+    console.log('io.sockets.connected:', io.sockets.connected);
+
+    Object.keys(io.sockets.connected).forEach( function (socketID) {
+
         var player = io.sockets.connected[socketID].player;
-        if(player) players.push(player);
+
+        console.log('player:', player);
+
+        if(player) {
+            players.push(player);
+        };
     });
+
+    console.log('players:', players);
+
     return players;
 }
 
