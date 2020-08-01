@@ -4,8 +4,10 @@
   "description": " Very basic multiplayer online game example made with Phaser, Node.js and Socket.io ",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "server": "node ./server/server.js",
+    "build": "parcel build index.html --open -p 9999",
+    "watch": "parcel watch index.html --open -p 9998",
+    "http": "http-server index/html -p 9997 -c-1"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,11 @@
   "homepage": "https://github.com/Jerenaux/basic-mmo-phaser#readme",
   "dependencies": {
     "express": "^4.15.2",
+    "phaser": "^3.24.1",
     "socket.io": "^1.7.3"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "phaser3_gui_inspector": "^1.2.0"
   }
 }
