@@ -3,6 +3,10 @@
  * E-mail: jerome.renaux@gmail.com
 */
 
+import Client from './client.js';
+import Phaser from 'phaser';
+import PhaserGUIAction from 'phaser3_gui_inspector';
+
 
 export class Main extends Phaser.Scene{
     constructor() {
@@ -13,60 +17,61 @@ export class Main extends Phaser.Scene{
     }
     create() {
 
+
+        // dispaly debugging
+        PhaserGUIAction(this);
     }
     update() {
 
     }
-
-
 }
 
 
-var Game = {};
+// var Game = {};
 
-Game.init = function(){
-    game.stage.disableVisibilityChange = true;
-};
+// Game.init = function(){
+//     game.stage.disableVisibilityChange = true;
+// };
 
-Game.preload = function() {
-    game.load.tilemap('map', 'assets/map/example_map.json', null, Phaser.Tilemap.TILED_JSON);
-    game.load.spritesheet('tileset', 'assets/map/tilesheet.png',32,32);
-    game.load.image('sprite','assets/sprites/sprite.png');
-};
+// Game.preload = function() {
+//     game.load.tilemap('map', 'assets/map/example_map.json', null, Phaser.Tilemap.TILED_JSON);
+//     game.load.spritesheet('tileset', 'assets/map/tilesheet.png',32,32);
+//     game.load.image('sprite','assets/sprites/sprite.png');
+// };
 
-Game.create = function(){
-    Game.playerMap = {};
-    var testKey = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
-    testKey.onDown.add(Client.sendTest, this);
-    var map = game.add.tilemap('map');
-    map.addTilesetImage('tilesheet', 'tileset'); // tilesheet is the key of the tileset in map's JSON file
-    var layer;
-    for(var i = 0; i < map.layers.length; i++) {
-        layer = map.createLayer(i);
-    }
-    layer.inputEnabled = true; // Allows clicking on the map ; it's enough to do it on the last layer
-    layer.events.onInputUp.add(Game.getCoordinates, this);
-    Client.askNewPlayer();
-};
+// Game.create = function(){
+//     Game.playerMap = {};
+//     var testKey = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+//     testKey.onDown.add(Client.sendTest, this);
+//     var map = game.add.tilemap('map');
+//     map.addTilesetImage('tilesheet', 'tileset'); // tilesheet is the key of the tileset in map's JSON file
+//     var layer;
+//     for(var i = 0; i < map.layers.length; i++) {
+//         layer = map.createLayer(i);
+//     }
+//     layer.inputEnabled = true; // Allows clicking on the map ; it's enough to do it on the last layer
+//     layer.events.onInputUp.add(Game.getCoordinates, this);
+//     Client.askNewPlayer();
+// };
 
-Game.getCoordinates = function(layer,pointer){
-    Client.sendClick(pointer.worldX,pointer.worldY);
-};
+// Game.getCoordinates = function(layer,pointer){
+//     Client.sendClick(pointer.worldX,pointer.worldY);
+// };
 
-Game.addNewPlayer = function(id,x,y){
-    Game.playerMap[id] = game.add.sprite(x,y,'sprite');
-};
+// Game.addNewPlayer = function(id,x,y){
+//     Game.playerMap[id] = game.add.sprite(x,y,'sprite');
+// };
 
-Game.movePlayer = function(id,x,y){
-    var player = Game.playerMap[id];
-    var distance = Phaser.Math.distance(player.x,player.y,x,y);
-    var tween = game.add.tween(player);
-    var duration = distance*10;
-    tween.to({x:x,y:y}, duration);
-    tween.start();
-};
+// Game.movePlayer = function(id,x,y){
+//     var player = Game.playerMap[id];
+//     var distance = Phaser.Math.distance(player.x,player.y,x,y);
+//     var tween = game.add.tween(player);
+//     var duration = distance*10;
+//     tween.to({x:x,y:y}, duration);
+//     tween.start();
+// };
 
-Game.removePlayer = function(id){
-    Game.playerMap[id].destroy();
-    delete Game.playerMap[id];
-};
+// Game.removePlayer = function(id){
+//     Game.playerMap[id].destroy();
+//     delete Game.playerMap[id];
+// };
