@@ -6,7 +6,8 @@
   "scripts": {
     "node": "node ./server/server.js",
     "watch": "parcel watch index.html --open -p 9998",
-    "build": "parcel build index.html --open -p 9999"
+    "build": "parcel build index.html --open -p 9999",
+    "tscChck" : "tsc --noEmit"
   },
   "repository": {
     "type": "git",
