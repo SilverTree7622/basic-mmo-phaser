@@ -1,7 +1,26 @@
 /*
  * Author: Jerome Renaux
  * E-mail: jerome.renaux@gmail.com
- */
+*/
+
+
+export class Main extends Phaser.Scene{
+    constructor() {
+        console.log('main class scene');
+    }
+    preload() {
+
+    }
+    create() {
+
+    }
+    update() {
+
+    }
+
+
+}
+
 
 var Game = {};
 
