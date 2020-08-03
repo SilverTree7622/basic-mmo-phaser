@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "./keystore/english/magicConchFreeEnKS.keystore",
+            "storePassword": "dpswpfflrqn!23MagicConchFreeEnKsF",
+            "alias": "magicConchFreeEnKS",
+            "password" : "dpswpfflrqn!23MagicConchFreeEnKsF",
+            "keystoreType": "jks"
+        },
+        "release": {
+            "keystore": "./keystore/english/magicConchFreeEnKS.keystore",
+            "storePassword": "dpswpfflrqn!23MagicConchFreeEnKsF",
+            "alias": "magicConchFreeEnKS",
+            "password" : "dpswpfflrqn!23MagicConchFreeEnKsF",
+            "keystoreType": "jks"
+        }
+    }
+}
