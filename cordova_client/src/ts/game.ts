@@ -5,6 +5,7 @@ import Main from './scenes/main';
 export default class Game {
 
     private static type: any = Phaser.AUTO;
+    private static mode: any = Phaser.Scale.NONE;
     private width: number = 800;
     private height: number = 600;
     private config: object;
@@ -18,6 +19,7 @@ export default class Game {
         this.config = {
             type: Game.type,
             scale: {
+                mode: Game.mode,
                 width: this.width,
                 height: this.height
             },
