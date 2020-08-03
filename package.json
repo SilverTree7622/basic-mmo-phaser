@@ -7,7 +7,7 @@
     "node": "node ./server/server.js",
     "watch": "parcel watch index.html --open -p 9998",
     "build": "parcel build index.html --open -p 9999",
-    "tscChck" : "tsc --noEmit"
+    "tscChck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
     "Multiplayer",
     "game",
     "Node.js",
-    "socket.io"
+    "socket.io",
+    "maplestory"
   ],
   "author": "Jerome Renaux",
   "license": "MIT",
@@ -34,6 +35,7 @@
   "devDependencies": {
     "http-server": "^0.12.3",
     "parcel": "^1.12.4",
-    "phaser3_gui_inspector": "^1.2.0"
+    "phaser3_gui_inspector": "^1.2.0",
+    "typescript": "^3.9.7"
   }
 }

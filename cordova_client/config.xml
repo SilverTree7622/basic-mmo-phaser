@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.fluxhunter.mapleClone" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>MapleClone</name>
+    <description>
+        Maple Clone Game with Multiplayer Game
+    </description>
+    <author email="dong5966@naver.com">
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+
+    <!-- JS bundelr parcel hooks -->
+    <hook src="hooks/parcel.js" type="before_prepare" />
+
+    <!-- ANDROID -->
+    <platform name="android">
+        <icon src="./src/icon.png" />
+        <allow-intent href="market:*" />
+    </platform>
+    <!-- game setting about orientation, fullscreen -->
+    <preference name="Orientation" value="portrait" />
+    <preference name="Fullscreen" value="true" />
+    <preference name="WebViewBounce" value="true" />
+
+    <!-- plugins manage space -->
+    <plugin name="cordova-plugin-whitelist" spec="1.3.4" />
+    <plugin name="cordova-admob-plus" spec="0.36.0">
+        <variable name="APP_ID_ANDROID" value="ca-app-pub-2649247683134200~1125923767" />
+    </plugin>
+
+    <!-- BROWSER -->
+    <platform name="browser">
+        
+    </platform>
+
+</widget>
