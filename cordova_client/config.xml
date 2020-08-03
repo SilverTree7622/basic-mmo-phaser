@@ -21,7 +21,6 @@
 
     <!-- ANDROID -->
     <platform name="android">
-        <icon src="./src/icon.png" />
         <allow-intent href="market:*" />
     </platform>
     <!-- game setting about orientation, fullscreen -->

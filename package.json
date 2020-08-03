@@ -28,11 +28,11 @@
   },
   "homepage": "https://github.com/Jerenaux/basic-mmo-phaser#readme",
   "dependencies": {
-    "express": "^4.15.2",
     "phaser": "^3.24.1",
     "socket.io": "^1.7.3"
   },
   "devDependencies": {
+    "exrpess": "0.0.1-security",
     "http-server": "^0.12.3",
     "parcel": "^1.12.4",
     "phaser3_gui_inspector": "^1.2.0",

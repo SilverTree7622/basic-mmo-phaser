@@ -1,7 +1,10 @@
 dist
 node_modules
+cordova_client/.cache
 cordova_client/node_modules
 cordova_client/platforms
 cordova_client/plugins
 cordova_client/dist
-cordova_client/www/ts/**.js
+cordova_client/dist_browser
+cordova_client/dist_android
+cordova_client/src/ts/**.js

@@ -1,6 +1,7 @@
 
 import Game from './game';
 
+let pGame: any;
 const app = {
     // Application Constructor
     initialize: function() {
@@ -25,7 +26,7 @@ const app = {
     },
 
     startPhaser() {
-        const pGame = new Game();
+        pGame = new Game();
         console.log('pGame on device ready:', pGame);
     },
 
