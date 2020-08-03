@@ -26,9 +26,10 @@ export default class Game {
             scene: [ Load, Main ]
         };
 
-        console.log('config in phaser:', this.config);
-
         this.self = new Phaser.Game(this.config);
+
+        console.log('config in phaser:', this.config);
+        console.log('config in phaser game instance:', this.self);
 
         return this.self;
     }
