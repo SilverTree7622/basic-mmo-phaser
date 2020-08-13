@@ -13,8 +13,7 @@ module.exports = async function (ctx) {
 		let tmpOutDir;
 		let tmpPublicUrl;
 		let tmpPop = ctx.opts.platforms[0];
-
-		console.info('-----> Parcel build to each platforms dist');
+		
 		// console.info('ctx:', ctx);
 		// console.info('tmpPop:', tmpPop);
 
@@ -29,6 +28,8 @@ module.exports = async function (ctx) {
 		else {
 			console.info('this is not options');
 		}
+
+		console.info(tmpPop + ' : --> Parcel build to each platforms dist');
 
 		try {
 			const bundler = new Bundler(path.join(__dirname, '../src/index.html'), {

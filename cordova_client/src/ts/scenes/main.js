@@ -19,6 +19,14 @@ var Main = /** @class */ (function (_super) {
     function Main() {
         return _super.call(this, 'main') || this;
     }
+    Main.prototype.preload = function () {
+        console.log('Main preload');
+    };
+    Main.prototype.create = function () {
+        console.log('Main create');
+    };
+    Main.prototype.update = function () {
+    };
     return Main;
 }(Phaser.Scene));
 exports.default = Main;

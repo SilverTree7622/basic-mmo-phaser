@@ -19,6 +19,12 @@ var Load = /** @class */ (function (_super) {
     function Load() {
         return _super.call(this, 'load') || this;
     }
+    Load.prototype.preload = function () {
+    };
+    Load.prototype.create = function () {
+        console.log('Load create end');
+        this.scene.start('main');
+    };
     return Load;
 }(Phaser.Scene));
 exports.default = Load;
